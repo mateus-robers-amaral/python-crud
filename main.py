@@ -2,10 +2,9 @@
 import streamlit as st
 import pandas as pd
 import Controllers.FuncionarioController as FuncionarioController
-from Models.FreeLancer import FreeLancer
+from Models.Freelancer import FreeLancer
 from Models.Vendedor import Vendedor
 
-# Interface principal
 st.title('Sistema de Cadastro de Vendas')
 tipo_funcionario = st.selectbox("Selecione o tipo de funcionário", ["FreeLancer", "Vendedor"])
 
@@ -34,7 +33,6 @@ if st.button("Consultar Funcionário"):
     dados = FuncionarioController.consultarFuncionario()
 
     if dados:
-        # Cria um dataframe com os dados
         df = pd.DataFrame(dados, columns=["Código", "Nome", "Tipo", "Dias Trabalhados", "Valor do dia", "Salário Base", "Comissão", "Salário calculado"])
         st.header("Lista de Funcionários")
         st.table(df)
