@@ -1,6 +1,6 @@
 # Controllers/FuncionarioController.py
 import sqlite3
-from Models.FreeLancer import FreeLancer
+from Models.Freelancer import FreeLancer
 from Models.Vendedor import Vendedor
 
 def conectaBD():
